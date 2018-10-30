@@ -1,13 +1,12 @@
 ########################
 ##Steigerwald analysis##
 ########################
-
-#####session02#####
+#----------session02---------------------------------------------------------------------------------------------------
 #install.packages("RCurl")
 library(RCurl)
 
 #load csv dataset fromm GitHum into R
-##link kopieren -->view raw drücken in github!!##
+##link kopieren -->view raw druecken in github!!##
 df <- read.csv("https://raw.githubusercontent.com/wegmann/R_data/master/Steigerwald_sample_points_all_data_subset_withNames.csv")
 #-----------------------------------------------------------------------------------------------------------------------
 #basic analysis
@@ -25,13 +24,12 @@ df$LUCAS_LC
 #select all sentinel2 data
 df[,3:12]
 head(df)
-#selct the secondlast column
+#select the secondlast column
 df[,length(df)-1]
 #only the first 10 rows
 df[1:10,]
 
-#----------------------------------------------------------------------------------------------------------------------
-#####session03#####
+#----------session03------------------------------------------------------------------------------------------------------------
 names(df)
 #only NDVI > 0.3
 ndvi <- df$L7.ndvi>0.3
@@ -46,12 +44,12 @@ ndvi <- df[df$SRTM<400 & df$LCname=="urban", "L7.ndvi"]
 ndvi
 plot(ndvi)
 
-#3. create new daraframe with data ndvi > 0.5
+#3. create new dataframe with data ndvi > 0.5
 ndvi_0.5 <- df[df$L7.ndvi>0.5, ]
 ndvi_0.5
 head(ndvi_0.5)
 
-#4. plot LUCAS_LC < XX or > XX
+#4. plot LUCAS_LC < 2 or > 5
 lc <- df[df$LUCAS_LC < 2 | df$LUCAS_LC > 5, ]
 head(lc)
 
