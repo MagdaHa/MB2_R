@@ -42,6 +42,23 @@ plot(r12)
 df12 <- r12[] # [] only the data in the raster, not the raster itself
 head(df12)
 
+
+#-----------------------------------------------------------------------------------
+##raster calculation
+#arithmetic
+raster12 <- r1*r2
+plot(raster12)
+
+#complex functions
+raster_sd <- calc(raster12, fun=sd)
+plot(raster_sd)
+
+#extended options???????????????????????????
+raster_sd2 <- calc(raster12, fun=sd, filename="raster_sd2.tif", options=c("COMPRESS=DEFLATE"))
+
+#regression analysis
+raster12_1 <- stack(r1, r2, fun=function())
+
 #----------------------------------------------------------------------------------
 ##Landsat information, examples
 #install.packages("RStoolbox")
@@ -69,8 +86,18 @@ lsat[lsat<0] <- NA
 #set values 8 and 7 to -9999
 lsat[lsat %in% c(7,8)] <- -9999
 
+#----------------------------
+# adding own function????????????
+data(lsat)
+scaleFactor <- 1000
+fun <- function(x) {
+  (x - rowMeans(x)) * scaleFactor
+}
+raster_output <- calc(raster12, fun, forcefun = TRUE, filename = "myStandardizedAndScaled.tif", dataType="INT2S")
+
 #------------------------------------------------------------------------------------
 ##reclassification
 m <- c(0, 0.25, 1, 0.25, 0.5, 2, 0.5, 1, 3)
 conversionMatrix <- matrix(m, ncol=3, byrow=TRUE)
 conversionMatrix
+
