@@ -60,7 +60,7 @@ ggplot(df, aes(d, a)) +geom_boxplot()
 ggplot(df, aes(d, a)) +geom_boxplot()+
   geom_jitter()                                                  #adding jitter
 ggplot(df, aes(d, a)) +geom_boxplot()+
-  geom_jitter(alpha=.5, width=0.3, color="blue")                 #chaning colour of jitter, adding translucency
+  geom_jitter(alpha=.5, width=0.3, color="blue")                 #changing colour of jitter, adding translucency
 ggplot(df, aes(d, a))+
   geom_boxplot(aes(group=cut_width(a, 0.5)), outlier.alpha = 0.1)+
   geom_jitter(width=0.3, color="blue")                          #cutting contious values for using in in a boxplot
