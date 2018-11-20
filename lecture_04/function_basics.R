@@ -68,3 +68,11 @@ ndvi <- function(nir, red){
  return((nir-red)/(nir+red))
 }
 ndvi(5,7)
+
+#------------------------------------------------------------------------------------------
+##function with sentence as output
+
+greet <- function(name) {
+  paste0("How do you do, ", name, "?")
+}
+greet("Magda")
