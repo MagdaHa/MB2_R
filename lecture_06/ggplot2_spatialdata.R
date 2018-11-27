@@ -11,7 +11,7 @@ lsat.df <- lsat.df[lsat.df$B3_dn !=0,]
 
 #--------------------------------------------------------------------------------------
 #plotting lsat image with color scales
-library(gglpot2)
+library(ggplot2)
 
 ggplot(lsat.df) +
   geom_raster(aes(x=x, y=y, fill=B4_dn)) +

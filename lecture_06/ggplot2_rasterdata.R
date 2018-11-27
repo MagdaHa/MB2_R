@@ -21,8 +21,8 @@ ggR(dgm, geom_raster = T)+
   theme(legend.title = element_text(size = 10, face = "bold"))+                 #legend title size, specification
   theme(legend.text = element_text(size = 6))+                                  #legend element size
   theme(axis.text.y=element_text(angle = 45, size = 9))+                        #y axis text with 45°angle
-  xlab("latitude")+                                                                #x axis title
-  ylab("longitude")+                                                                     #y axis title
+  xlab("longitude")+                                                            #x axis title
+  ylab("latitude")+                                                             #y axis title
   theme_bw()                                                                    #background color
 
 #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
