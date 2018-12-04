@@ -1,0 +1,10 @@
+Package: magda
+Title: All relevant tools for Magda and the MB2 course
+Version: 0.0.0.9000
+Authors@R: person("Magda", "Ha", email = "first.last@example.com", role = c("aut", "cre"))
+Description: This package contains all relevant tools that are needed for the MB2 course, e.g. xxxxxxxxxxxx
+Depends: R (>= 3.5.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
