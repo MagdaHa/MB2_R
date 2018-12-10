@@ -1,11 +1,11 @@
-###################################
+##################################
 #### Download Sentinel Images ####
-###################################
+##################################
 #-----------------------------------https://github.com/16EAGLE/getSpatialData-----------------------------------#
 
 # to download an R package from a GitHub, devtools are required
 # install.packages(devtools)
-devtools::install_github("16EAGLE/getSpatialData")
+devtools::install_github("16EAGLE/getSpatialData", force=TRUE)
 
 #import used packages
 library(getSpatialData)
@@ -20,13 +20,13 @@ set_aoi()
 view_aoi()
 
 #--------------------------------------------------------------------------------------------------------------------------
+# Log in into your Copernicus Hub account
+login_CopHub(username = "magdalenaha") #asks for password or define 'password
+
+#--------------------------------------------------------------------------------------------------------------------------
 # Specify a time range and the sattelite platform
 time_range <-  c("2018-07-01", "2018-10-30")
 platform <- "Sentinel-2" #or "Sentinel-1" or "Sentinel-3"
-
-#--------------------------------------------------------------------------------------------------------------------------
-# Log in into your Copernicus Hub account
-login_CopHub(username = "MagdaHa") #asks for password or define 'password'
 
 #--------------------------------------------------------------------------------------------------------------------------
 # specify an output directory for downloaded scenes
