@@ -195,7 +195,7 @@ dev.off()
 library(RStoolbox)
 df <- ggR(rasterHist_mean, ggObj = FALSE)
 df2 <- ggR(rasterComp, ggObj = FALSE)
-colnames(df)[3] <- colnames(df2)[3] <- "values"
+colnames(df)[3] <- "values"
 dfab <- rbind(data.frame(df,band="1961-2017 (mean)"), data.frame(df2,band="2018"))
 
 pdf("August_mean_vs_2018_2.pdf", width = 12, height = 8)
@@ -284,7 +284,7 @@ dev.off()
 
 # download boundary data
 # bnd <- raster::getData("GADM", country='DEU', level=1)
-bnd.utm <- spTransform(bnd, CRS(proj4string(my_raster)))
+bnd.utm <- spTransform(bnd, CRS(proj4string(my_raster)))  #spTransform -> reprojection
 
 # visual check
 # plot(bnd.utm,add=T)
